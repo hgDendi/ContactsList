@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="60dp"
+             android:layout_height="60dp"
+             android:orientation="vertical">
+
+    <TextView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/dialog_letter_hint_textview"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:background="@drawable/shape_dialog_letter_hint_background"
+        android:textSize="40dp"/>
+
+</FrameLayout>

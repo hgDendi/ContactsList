@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="item_decoration_title_background">#23282E</color>
+    <color name="item_decoration_title_fontcolor">#74869C</color>
+
+    <color name="background_recyclerview">#2E363C</color>
+
+    <color name="listitem_title_text">#D8DFE7</color>
+    <color name="listitem_subtitle_text">#74869C</color>
+
+    <color name="dialog_hint">#4CD8DFE7</color>
+
+    <color name="indexbar_letter_color">#7FFFFFFF</color>
+</resources>

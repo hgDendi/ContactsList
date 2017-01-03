@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="IndexBar">
+        <attr name="letterSize" format="dimension" />
+        <attr name="letterColor" format="color" />
+        <attr name="focusLetterColor" format="color" />
+        <attr name="letterSpacingExtra" format="float" />
+    </declare-styleable>
+</resources>

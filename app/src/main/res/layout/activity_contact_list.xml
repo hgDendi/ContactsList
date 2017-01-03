@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/item_decoration_title_background"
+    android:orientation="vertical"
+    android:paddingBottom="8dp"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:paddingTop="8dp">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/share_add_contact_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:overScrollMode="never" />
+
+    <com.hgdendi.contactslist.common.IndexBar
+        android:id="@+id/share_add_contact_sidebar"
+        android:layout_width="16dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        app:focusLetterColor="@color/indexbar_letter_color"
+        app:letterColor="@color/indexbar_letter_color"
+        app:letterSize="10sp"
+        app:letterSpacingExtra="1.4" />
+
+</RelativeLayout>
