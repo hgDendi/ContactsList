@@ -41,11 +41,6 @@ public class ContactsManager {
                 String phoneNumber = phoneCursor.getString(0).replace(" ", "");
                 String contactName = phoneCursor.getString(1);
                 result.add(new ShareContactsBean(contactName, phoneNumber));
-                result.add(new ShareContactsBean(contactName + "1", phoneNumber));
-                result.add(new ShareContactsBean(contactName + "2", phoneNumber));
-                result.add(new ShareContactsBean(contactName + "3", phoneNumber));
-                result.add(new ShareContactsBean(contactName + "4", phoneNumber));
-                result.add(new ShareContactsBean(contactName + "5", phoneNumber));
             }
             phoneCursor.close();
         }
