@@ -9,6 +9,8 @@ Can be easily applied to other list with floating section bar.
 
 ![img](https://github.com/hgDendi/ContactsList/blob/master/img/ContactsListDemo.gif)
 
+![demo](https://github.com/hgDendi/ContactsList/blob/master/img/ContactsListDemo2.gif)
+
 ## FloatingBarItemDecoration
 
 Key class which takes care of section bar of the list(RecyclerView)
