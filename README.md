@@ -11,6 +11,8 @@ Can be easily applied to other list with floating section bar.
 
 ![demo](https://github.com/hgDendi/ContactsList/blob/master/img/ContactsListDemo2.gif)
 
+解析blog请见：[http://www.hgworts.tech/android/2017/01/04/Android优雅实现通讯录](http://www.hgworts.tech/android/2017/01/04/Android优雅实现通讯录)
+
 ## FloatingBarItemDecoration
 
 Key class which takes care of section bar of the list(RecyclerView)
@@ -31,7 +33,7 @@ the bar aside
 
 侧栏条
 
-## lisence
+## Lisence
 
 ```
   Copyright 2017 ChenHao Dendi
