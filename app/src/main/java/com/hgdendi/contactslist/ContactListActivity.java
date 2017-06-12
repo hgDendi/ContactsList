@@ -167,7 +167,7 @@ public class ContactListActivity extends AppCompatActivity {
             return;
         }
         addHeaderToList(0, mContactList.get(0).getInitial());
-        for (int i = 2; i < mContactList.size(); i++) {
+        for (int i = 1; i < mContactList.size(); i++) {
             if (!mContactList.get(i - 1).getInitial().equalsIgnoreCase(mContactList.get(i).getInitial())) {
                 addHeaderToList(i, mContactList.get(i).getInitial());
             }
