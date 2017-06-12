@@ -1,12 +1,12 @@
 /**
  * Copyright 2017 ChenHao Dendi
- *
+ * <p>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -16,6 +16,7 @@
 package com.hgdendi.contactslist.common;
 
 import android.support.annotation.NonNull;
+import android.text.TextUtils;
 
 public class ContactsUtils {
     private static int BEGIN = 45217;
@@ -23,21 +24,21 @@ public class ContactsUtils {
 
     /**
      * each item is the fist Chinese word of every initial consonant in GB2312
-     * {i、u、v} is not among the table
+     * {i、u、v} is not among the BORDER
      */
-    private static char[] chartable = {'啊', '芭', '擦', '搭', '蛾', '发', '噶', '哈', '击', '喀', '垃',
+    private static final char[] CHAR_TABLE = {'啊', '芭', '擦', '搭', '蛾', '发', '噶', '哈', '击', '喀', '垃',
             '妈', '拿', '哦', '啪', '期', '然', '撒', '塌', '挖', '昔', '压', '匝'};
 
-    private static char[] initialtable = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K',
+    private static char[] INITIAL_TABLE = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K',
             'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'W', 'X', 'Y', 'Z'};
 
-    private static int[] table = new int[chartable.length + 1];
+    private static final int[] BORDER = new int[CHAR_TABLE.length + 1];
 
     static {
-        for (int i = 0; i < chartable.length; i++) {
-            table[i] = gbValue(chartable[i]);
+        for (int i = 0; i < CHAR_TABLE.length; i++) {
+            BORDER[i] = gbValue(CHAR_TABLE[i]);
         }
-        table[chartable.length] = END;
+        BORDER[CHAR_TABLE.length] = END;
     }
 
     @NonNull
@@ -45,8 +46,9 @@ public class ContactsUtils {
         return getAbbreviation(string, '#');
     }
 
+    @NonNull
     public static String getAbbreviation(String string, char defaultAbbreviation) {
-        if (string == null || string.isEmpty()) {
+        if (TextUtils.isEmpty(string)) {
             return "" + defaultAbbreviation;
         }
         StringBuilder sb = new StringBuilder();
@@ -75,20 +77,12 @@ public class ContactsUtils {
         // 若不是，则直接返回。
         // 若是，则在码表内的进行判断。
         int gb = gbValue(ch);// 汉字转换首字母
-        if ((gb < BEGIN) || (gb > END))// 在码表区间之前，直接返回
+        if ((gb < BEGIN) || (gb > END))// 在码表区间之外，直接返回
         {
             return defaultAbbreviation;
         }
 
-        int i = 1;
-        while (i < table.length) {
-            if (gb < table[i]) {
-                i--;
-                break;
-            }
-            i++;
-        }
-        return initialtable[i];
+        return INITIAL_TABLE[findIndexOf(gb, BORDER)];
     }
 
 
@@ -103,5 +97,29 @@ public class ContactsUtils {
         } catch (Exception e) {
             return 0;
         }
+    }
+
+    /**
+     * 尾递归的二分查找
+     *
+     * @param value
+     * @param list
+     * @return
+     */
+    private static int findIndexOf(int value, int[] list) {
+        return findIndexOf(value, list, 0, list.length - 1);
+    }
+
+    private static int findIndexOf(int value, int[] list, int start, int end) {
+        int cursor = (start + end) / 2;
+        if (cursor == start || list[cursor] == value) {
+            return cursor;
+        }
+        if (list[cursor] > value) {
+            end = cursor;
+        } else {
+            start = cursor;
+        }
+        return findIndexOf(value, list, start, end);
     }
 }

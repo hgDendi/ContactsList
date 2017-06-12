@@ -1,12 +1,12 @@
 /**
  * Copyright 2017 ChenHao Dendi
- *
+ * <p>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -38,7 +38,7 @@ public class ContactsManager {
                 new String[]{ContactsContract.CommonDataKinds.Phone.NUMBER, ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME}, null, null, null);
         if (phoneCursor != null) {
             while (phoneCursor.moveToNext()) {
-                String phoneNumber = phoneCursor.getString(0).replace(" ", "");
+                String phoneNumber = phoneCursor.getString(0).replace(" ", "").replace("-", "");
                 String contactName = phoneCursor.getString(1);
                 result.add(new ShareContactsBean(contactName, phoneNumber));
             }
