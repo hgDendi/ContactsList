@@ -11,7 +11,7 @@ Can be easily applied to other list with floating section bar.
 
 ![demo](https://github.com/hgDendi/ContactsList/blob/master/img/ContactsListDemo2.gif)
 
-解析blog请见：[http://www.hgworts.tech/android/2017/01/04/Android%E4%BC%98%E9%9B%85%E5%AE%9E%E7%8E%B0%E9%80%9A%E8%AE%AF%E5%BD%95](http://www.hgworts.tech/android/2017/01/04/Android%E4%BC%98%E9%9B%85%E5%AE%9E%E7%8E%B0%E9%80%9A%E8%AE%AF%E5%BD%95)
+解析blog请见：[HgWorts](http://www.hgworts.tech/android/2017/01/04/Android%E9%80%9A%E8%AE%AF%E5%BD%95%E5%AE%9E%E7%8E%B0)
 
 ## FloatingBarItemDecoration
 
