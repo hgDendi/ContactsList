@@ -27,13 +27,13 @@ import java.util.Comparator;
 
 public class ContactsManager {
     /**
-     * @param mContext
+     * @param context
      * @return List
      */
     @NonNull
-    public static ArrayList<ShareContactsBean> getPhoneContacts(Context mContext) {
-        ArrayList<ShareContactsBean> result = new ArrayList<>(0);
-        ContentResolver resolver = mContext.getContentResolver();
+    public static ArrayList<ShareContactsBean> getPhoneContacts(Context context) {
+        ArrayList<ShareContactsBean> result = new ArrayList<>();
+        ContentResolver resolver = context.getContentResolver();
         Cursor phoneCursor = resolver.query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
                 new String[]{ContactsContract.CommonDataKinds.Phone.NUMBER, ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME}, null, null, null);
         if (phoneCursor != null) {

@@ -93,7 +93,7 @@ public class ContactListActivity extends AppCompatActivity {
     }
 
     /**
-     * realated to {@Link IndexBar#OnTouchingLetterChangeListener}
+     * related to {@link IndexBar#mOnTouchingLetterChangeListener}
      * show dialog in the center of this window
      * @param s
      */
@@ -129,10 +129,12 @@ public class ContactListActivity extends AppCompatActivity {
 
     /**
      * fetch the data to display
-     * need permission of READ_CONTACTS
+     * need permission of Manifest.permission.READ_CONTACTS
      */
     private void fetchData() {
-        mHeaderList = new LinkedHashMap<>();
+        if (mHeaderList == null) {
+            mHeaderList = new LinkedHashMap<>();
+        }
         fetchContactList();
     }
 
@@ -159,7 +161,7 @@ public class ContactListActivity extends AppCompatActivity {
     }
 
     /**
-     * calculate the TAG and add to {@Link #mHeaderlist}
+     * calculate the TAG and add to {@link #mHeaderList}
      */
     private void preOperation() {
         mHeaderList.clear();
